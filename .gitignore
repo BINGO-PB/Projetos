@@ -9,7 +9,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+
 develop-eggs/
 dist/
 downloads/
@@ -220,11 +220,3 @@ __marimo__/
 # Personalizados
 sandbox/
 .vscode/
-# MyST build outputs
-_build
-
-# MyST build outputs
-_build
-
-# MyST build outputs
-_build
