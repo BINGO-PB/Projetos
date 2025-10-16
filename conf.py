@@ -85,7 +85,7 @@ logging.getLogger("sphinx.ext.viewcode").logger.addFilter(
 html_static_path = ["_static"]
 
 html_css_files = [
-    "css/custom.css"  # sem _static/ aqui
+    "custom.css"  # sem _static/ aqui
 ]
 
 # --- MYST configuration --------------------------------------------------
