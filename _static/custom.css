@@ -1,0 +1,10 @@
+/* Style for the footnote reference in the text */
+.footnote-reference {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+/* Style for the footnote number at the bottom of the page */
+.footnote-label {
+    font-weight: bold; /* Optional, for emphasis */
+}

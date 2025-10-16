@@ -1,0 +1,111 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id:
+  title:  BINGO-PB projects
+  short_title: BINGO-PB
+  description: BINGO-PB
+  keywords:
+    [
+      radioastronomy,
+    ]
+  # affiliations:
+  #   - id: UFCG
+  #     institution: Universidade Federal de Campina Grande
+  # #      departament: Unidade Acadêmica de Física
+  authors:
+    - name: Luciano Barosi
+      email: lbarosi@df.ufcg.edu.br
+      affiliation:
+        - id: UFCG
+  github: https://github.com/barosil/bingo-pb/Projetos
+  license: CC-BY-4.0
+  open_access: true
+  exports:
+    - format: pdf
+    - template: book-theme
+    - output: exports/document.pdf
+  thumbnail: content/00_images/bingo_logo.png
+  bibliography:
+    - refs.bib
+
+  #binder:
+
+  numbering:
+    headings: true
+    figures: true
+    code: true
+    math: true
+  
+  jupyter: 
+    binder: true
+    
+  requirements:
+    - binder/apt.txt
+    - binder/environment.yml
+    - binder/postBuild/
+    - binder/start
+
+  resources:
+    - src/*
+    - data/*
+
+
+
+  toc:
+    - file: content/01_projetos/cover.md
+    - title: Content
+      children:
+        - title: Projects
+          children:
+            - title: Undergraduate Research
+              children:
+                - pattern: "content/01_projetos/01_undergraduate/*.md"
+            - title: Graduate Research
+              children:
+                - pattern: "content/01_projetos/02_graduate/*.md"
+            - title: Research
+              children:
+                - pattern: "content/01_projetos/03_research/*.md"
+            - title: Outreach
+              children:
+                - pattern: "content/01_projetos/04_outreach/*.md"
+            - title: Software
+              children:
+                - pattern: "content/01_projetos/05_coding/*.md"
+
+
+site:
+  template: book-theme
+  # domains:
+  #   - lbarosi.curve.space
+  options:
+    folders: true
+    maxdepth: 2
+    style: _static/css/custom.css
+    #   favicon: favicon.ico
+    logo: content/00_images/bingo_logo.png
+    logo_text: BINGO-PB
+    launch_buttons:
+      notebook_interface: "jupyterlab"  # ou "classic"
+      binderhub_url: "https://mybinder.org"
+      colab_url: ""
+      thebe: true
+  parts:
+    #footer: content/01_frontmatter/footer.md
+  # nav:
+  #   - title: Principal
+  #     url: /content/frontmatter/cover
+  #   - title: Links Uteis
+  #     url: /content/frontmatter/links
+  #   - title: Sobre este Livro
+  #     url: /content/frontmatter/about
+  
+# jupyter:
+#   execute: true
+#   kernel: eletroufcg
+#   timeout: 60
+
+render:
+  code: true
+  output: true
