@@ -18,7 +18,7 @@ project:
       email: lbarosi@df.ufcg.edu.br
       affiliation:
         - id: UFCG
-  github: https://github.com/barosil/bingo-pb/Projetos
+  github: https://github.com/BINGO-PB/Projetos
   license: CC-BY-4.0
   open_access: true
   exports:
