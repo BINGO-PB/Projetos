@@ -1,7 +1,7 @@
-# Projetos
+# Radiotelescópio BINGO
 
-## Luciano Barosi
+## Projetos BINGO-PB
 
-## 2025
+### 2025
 
-Este repositório mantém os projetos em que o grupo BINO-PB tem interesse em trabalhar.
+Este repositório mantém os projetos em que o grupo BINGO-PB tem interesse em trabalhar.

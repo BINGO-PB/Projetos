@@ -73,6 +73,12 @@ project:
             - title: Software
               children:
                 - pattern: "content/01_projetos/05_coding/*.md"
+        - title: Ongoing Projects
+          children:
+            - title: Uirapuru2025 - First Light
+              children:
+                - pattern: "content/02_projetos_ongoing/UIRAPURU2025/*.md"
+
 
 
 site:
@@ -82,7 +88,7 @@ site:
   options:
     folders: true
     maxdepth: 2
-    style: _static/css/custom.css
+    style: _static/custom.css
     #   favicon: favicon.ico
     logo: content/00_images/bingo_logo.png
     logo_text: BINGO-PB
