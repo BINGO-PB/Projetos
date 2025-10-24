@@ -32,7 +32,7 @@ project:
   #binder:
 
   numbering:
-    headings: true
+    # headings: true
     figures: true
     code: true
     math: true
@@ -77,7 +77,7 @@ project:
           children:
             - title: Uirapuru2025 - First Light
               children:
-                - pattern: "content/02_projetos_ongoing/UIRAPURU2025/*.md"
+                - pattern: "content/02_projetos_ongoing/01_UIRAPURU2025/*.md"
 
 
 
