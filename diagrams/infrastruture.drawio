@@ -1,0 +1,37 @@
+<mxfile host="65bd71144e">
+    <diagram id="CfWRdaUzGT4Njw8HjsTs" name="Page-1">
+        <mxGraphModel dx="236" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;h1&gt;Infrastructure&lt;/h1&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=180;height=30;" vertex="1" parent="1">
+                    <mxGeometry x="1080" y="580" width="460" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="SkarabClient" style="html=1;whiteSpace=wrap;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+                    <mxGeometry x="1140" y="640" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="USRPClient" style="html=1;whiteSpace=wrap;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+                    <mxGeometry x="1140" y="700" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="CallistoClient" style="html=1;whiteSpace=wrap;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+                    <mxGeometry x="1140" y="760" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="SDRClient" style="html=1;whiteSpace=wrap;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+                    <mxGeometry x="1270" y="640" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="HDFFileHanddler" style="html=1;whiteSpace=wrap;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="1396" y="640" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="FileHanddler" style="html=1;whiteSpace=wrap;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="1396" y="700" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="DBEngine" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1270" y="760" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="SensorModule" style="html=1;whiteSpace=wrap;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="1270" y="700" width="110" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

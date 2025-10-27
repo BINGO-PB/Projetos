@@ -1,0 +1,67 @@
+<mxfile host="65bd71144e">
+    <diagram id="sfLbs6BBvE6PBD_UlI-y" name="Page-1">
+        <mxGraphModel dx="236" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;h1&gt;Application&lt;/h1&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=140;height=30;" vertex="1" parent="1">
+                    <mxGeometry x="1080" y="80" width="692" height="359" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="CallistoController" style="html=1;whiteSpace=wrap;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="1103" y="123" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="CalUnitController" style="html=1;whiteSpace=wrap;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="1103" y="196" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="SDRController" style="html=1;whiteSpace=wrap;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="1103" y="257" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="USRPController" style="html=1;whiteSpace=wrap;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="1103" y="329" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="FitsHandler" style="html=1;whiteSpace=wrap;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="1243" y="123" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="HDF5Handler" style="html=1;whiteSpace=wrap;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="1243" y="190" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="StreamHandler" style="html=1;whiteSpace=wrap;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="1243" y="256" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="ConfigParser" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;gradientColor=#ffd966;strokeColor=#d6b656;" vertex="1" parent="1">
+                    <mxGeometry x="1373" y="123" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="SensorReader" style="html=1;whiteSpace=wrap;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="1373" y="188" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="ArduinoController" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1508" y="123" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="RaspberryController" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1508" y="183" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Scheduler" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1508" y="248" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Runner" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1508" y="313" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="SystemMonitor" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1508" y="373" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="TCPClient" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1638" y="123" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="TCPserver" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1638" y="183" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="FileHandler" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1638" y="248" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="SSHClient" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="1638" y="313" width="110" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

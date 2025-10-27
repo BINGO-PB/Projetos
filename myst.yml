@@ -78,6 +78,13 @@ project:
             - title: Uirapuru2025 - First Light
               children:
                 - pattern: "content/02_projetos_ongoing/01_UIRAPURU2025/*.md"
+            - title: Meeting Minutes
+              children:
+                - pattern: "content/02_projetos_ongoing/01_UIRAPURU2025/MEETINGS_MINUTES/*.md"
+            - title: Dev Notes
+              children:
+                - pattern: "content/02_projetos_ongoing/01_UIRAPURU2025/DEV_NOTES/*.md"
+
 
 
 
