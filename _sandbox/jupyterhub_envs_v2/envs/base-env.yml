@@ -1,0 +1,20 @@
+name: base-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - ipykernel
+  - nodejs
+  - pip
+  - ruff
+  - pytest
+  - mypy
+  - python-lsp-server
+  - jupyterlab-git
+  - nbconvert
+  - psutil
+  - pip:
+      - jupyterlab-code-formatter
+      - black
+      - isort

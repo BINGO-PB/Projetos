@@ -1,0 +1,14 @@
+name: uirapuru-dev
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - ipykernel
+  - numpy
+  - scipy
+  - astropy
+  - h5py
+  - xarray
+  - dask
+  - pip

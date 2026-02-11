@@ -1,0 +1,13 @@
+name: radioastro-minimal
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - ipykernel
+  - numpy
+  - scipy
+  - matplotlib
+  - astropy
+  - xarray
+  - pip

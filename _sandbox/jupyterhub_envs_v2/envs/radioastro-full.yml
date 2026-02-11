@@ -1,0 +1,35 @@
+name: radioastro-full
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - ipykernel
+  - nodejs
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - astropy
+  - astroquery
+  - astropy-healpix
+  - healpy
+  - reproject
+  - mocpy
+  - cdshealpix
+  - h5py
+  - zarr
+  - xarray
+  - dask
+  - distributed
+  - numba
+  - numexpr
+  - cfitsio
+  - shapely
+  - skyfield
+  - wcsaxes
+  - pip:
+      - plotly
+      - holoviews
+      - hvplot
+      - panel

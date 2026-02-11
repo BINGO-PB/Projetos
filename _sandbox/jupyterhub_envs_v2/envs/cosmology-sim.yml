@@ -1,0 +1,15 @@
+name: cosmology-sim
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - ipykernel
+  - numpy
+  - scipy
+  - numba
+  - emcee
+  - camb
+  - pip:
+      - classy
+      - arviz

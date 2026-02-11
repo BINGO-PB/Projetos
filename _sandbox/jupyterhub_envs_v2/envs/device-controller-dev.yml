@@ -1,0 +1,16 @@
+name: device-controller-dev
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - ipykernel
+  - pyserial
+  - asyncssh
+  - aiohttp
+  - pyzmq
+  - pydantic
+  - fastapi
+  - numpy
+  - scipy
+  - pip
