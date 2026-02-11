@@ -84,6 +84,9 @@ project:
             - title: Dev Notes
               children:
                 - pattern: "content/02_projetos_ongoing/01_UIRAPURU2025/DEV_NOTES/*.md"
+            - title: Digital Signal Processing
+              children:
+                - pattern: "content/02_projetos_ongoing/03_signals/*.md"
 
 
 

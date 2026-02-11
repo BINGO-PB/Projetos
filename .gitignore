@@ -230,3 +230,5 @@ _build
 # MyST build outputs
 _build
 _sandbox/
+# MyST build outputs
+_build
