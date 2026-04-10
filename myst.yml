@@ -85,6 +85,11 @@ project:
                 - pattern: "content/02_projetos_ongoing/02_MINIHORN2025/*.md"
             - title: SKARAB
               children:
+              - title: Meeting Minutes
+                children:
+                  - pattern: "content/02_projetos_ongoing/03_SKARAB/00_meeting_minutes/*.md"
+              - title: Project
+                children:
                 - pattern: "content/02_projetos_ongoing/03_SKARAB/*.md"
             - title: White Paper
               children:

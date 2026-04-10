@@ -1,26 +1,26 @@
 # BINGO Skarab PB
 
-## Descrição do Problema
+## Problem Description
 
-O SKARAB (Square Kilometer Array Reconfigurable Application Board) é uma plataforma de computação superescala baseada em FPGA, projetada pela Peralex Electronics na África do Sul, em colaboração com o SARAO para rádio astronomia. É o sucessor do ROACH2, com foco em alto desempenho, baixa latência e processamento de sinal digital. 
+The SKARAB (Square Kilometer Array Reconfigurable Application Board) is a superscale FPGA-based computing platform, designed by Peralex Electronics in South Africa, in collaboration with SARAO for radio astronomy. It is the successor to ROACH2, focused on high performance, low latency, and digital signal processing.
 
-![Esquema da Skarab](../../00_images/skarab_esquema.png)
+![SKARAB Diagram](../../00_images/skarab_esquema.png)
 
-Este dispositivo será utilizado como backend do BINGO, é necessário:
-- Determinar o processamento de sinal necessário para atingir o objetivo de ciência do BINGO, a saber, observações cosmológicas de hidrogênio neutro e fenômenos transientes.
-- Determinar o transporte dos dados da SKARAB para um computador controlador.
-- Construir uma pipeline no controlador para ingerir os dados da SKARAB, controlar seu comportamento e transmitir os dados downstream.
+This device will be used as the BINGO backend. It is necessary to:
+- Determine the signal processing required to achieve BINGO's science objective, namely cosmological observations of neutral hydrogen and transient phenomena.
+- Determine data transport from SKARAB to a controller computer.
+- Build a pipeline on the controller to ingest SKARAB data, control its behavior, and transmit data downstream.
 
-## Histórico
+## History
 
-## Time
+## Team
 
 - UFCG
     - Luciano Barosi
     - Jordany Vieira
     - Tales
     - Gutemberg
-    - Aluno de Gutemberg
+    - DEE Student
     - João Vitor
 - CHINA
     - Hector
@@ -30,275 +30,369 @@ Este dispositivo será utilizado como backend do BINGO, é necessário:
 
 ## Baseline
 
-## Dificuldades Enfrentadas
+### Hardware
 
-## Plano de Ação
+SKARAB BOARD
+- FPGA Virtex-7 XC7VX690T
+  - 690,000 logic cells
+  - 3,600 DSP blocks
+  - 53 Mb RAM
+- ADC TI ADC32RF45
+  - 14 bits
+  - 3 GSps
+- QSFP+ 40 GbE
 
-## Decisões de organização do trabalho
+### Science Requirements
 
-:::{admonition} **Computadores**
-- **hven**: máquina onde será instalado *Matlab*, *Vivado* para desenvolvimento de bitstreams.
-- **uirapuru**: dual boot Ubuntu 16.04 + python 2.7, conectada a Skarab para desenvolvimento do sistema de controle.
+- Bandwidth $\sim$ 400 MHz
+  - Decimation: 8
+- channels: 8192
+
+
+### Available code
+
+- GITHUB repository: https://github.com/BINGO-PB/BINGO_SKARAB_AI
+  - This repository contains firmware and control scripts for the SKARAB platform used in the BINGO (Baryon Oscillation Spectroscopic Survey) radio telescope project. The firmware is designed to work with the SKARAB (Square Kilometre Array Reconfigurable Application Board) platform equipped with Virtex-7 FPGA and ADC mezzanine cards.
+- GITHUB repository: https://github.com/BINGO-PB/bingo_skarab
+  - This repository allows creating containers for developing a SKARAB control system with different library versions.
+
+### Current best configuration
+
+- spectrometer:
+  - BW: 187.5 Mhz
+  - channels: 32768
+  - UDP
+  - 40GB
+
+## Challenges Encountered
+
+## Action Plan
+
+## Work Organization Decisions
+
+:::{admonition} **Computers**
+- **hven**: machine where *Matlab* and *Vivado* will be installed for bitstream development.
+- **uirapuru**: dual boot Ubuntu 16.04 + Python 2.7, connected to SKARAB for control system development.
+:::
+
+:::{admonition} **Workflow**
+- Stage 0/1 meetings - Tuesday 09:00 - ZOOM
+- bi-weekly online alignment meetings
+- 1-1 interactions for development and task completions
+- Weekly individual short updates of progress and/or difficulties kept in GitHub.
+- Task completion with small report, including validation procedure and fullfilment of requirements.
 :::
 
 ### RoadMap 
 
-:::{seealso} **Fase 0 — Preparação de Ambiente**
+:::{seealso} **Phase 0 — Computer Set Up**
+:class: dropdown
 
-#### Objetivos
-- Configuração dos ambientes de desenvolvimento
-- Execução de exemplos básicos do CASPER
+#### Objectives
+- Development environment setup
+- Execution of basic CASPER examples
 
-#### Tarefas
+#### Tasks
 
-- Preparação de ambiente em *hven*
-  - Equipe: Tales + Arthur
-  - Milestone: execução do `casper_fft.slx`
+- Environment setup on *hven*
+  - Team: Tales + Arthur
+  - Milestone: running `casper_fft.slx`
 
-- Preparação de ambiente em *uirapuru*
-  - Equipe: Tales + João Vitor
-  - Milestone: tutorial 2 CASPER
+- Environment setup on *uirapuru*
+  - Team: Tales + João Vitor
+  - Milestone: CASPER tutorial 2
 
 :::
 
-:::{seealso} **Fase 1 — Fundamentos CASPER**
+:::{seealso} **Phase 1 — CASPER Fundamentals**
+:class: dropdown
 
-#### Objetivos
-- Nivelamento da equipe
-- Compreensão da arquitetura CASPER + FPGA
+#### Objectives
+- Team leveling
+- Understanding CASPER + FPGA architecture
 
-#### Tarefas
+#### Tasks
 
-- Tutorial CASPER 4
+- CASPER Tutorial 4
   - Milestone: Waterfall diagram
 
-#### Conteúdos essenciais
+#### Essential Content
 
-- Arquitetura FPGA (DSP slices, BRAM, routing)
-- Representação em ponto fixo
-- Pipeline de processamento
+- FPGA Architecture (DSP slices, BRAM, routing)
+- Fixed-point representation
+- Processing pipeline
 :::
 
-:::{warning} **2 — Modelagem de Sinal**
+:::{warning} **2 — Signal Modeling**
+:class: dropdown
 
-#### Objetivos
-- Construir modelos realistas antes do hardware
+#### Objectives
+- Build realistic models before hardware
 
-#### Tarefas
+#### Tasks
 
-- Modelagem do ADC
-- Modelagem de ruído
-- Modelagem de RFI
-- Controle de ganho (gain staging)
-- Remoção de DC
+- ADC modeling
+- Noise modeling
+- RFI modeling
+- Gain control (gain staging)
+- DC removal
 
 :::
 
-:::{warning} **3 — DSP Core (Pipeline FFT)**
+:::{warning} **3 — DSP Core (FFT Pipeline)**
+:class: dropdown
 
-#### Objetivos
-- Desenvolvimento do espectrômetro no Simulink
+#### Objectives
+- Spectrometer development in Simulink
 
-#### Tarefas
+#### Tasks
 
 1. FFT
    - Aliasing
    - Scalloping loss
    - Spectral leakage
 
-2. Janelamento
+2. Windowing
 
-3. Estratégia de ponto fixo
-   - Definição de bit-width
-   - Política de overflow (wrap vs saturate)
+3. Fixed-point strategy
+   - Bit-width definition
+   - Overflow policy (wrap vs saturate)
 
-4. Decimação
+4. Decimation
 
-5. Filtros FIR
+5. FIR Filters
 
-6. Dynamic Range e SFDR
+6. Dynamic Range and SFDR
 
-7. Saturação e não-linearidades
+7. Saturation and non-linearities
 
 :::
 
-:::{warning} **4 — Sistema Digital**
+:::{warning} **4 — Digital System**
+:class: dropdown
 
-#### Objetivos
-- Transformar o DSP em sistema embarcado funcional
+#### Objectives
+- Transform the DSP into a functional embedded system
 
-#### Tarefas
+#### Tasks
 
 - Timestamping
-- Packetização (10/40 GbE)
+- Packetization (40 GbE)
 - Channel selection
 - Buffering
 
 :::
 
-:::{warning} **5 — Sincronização e Multi-SKARAB**
+:::{warning} **5 — Synchronization and Multi-SKARAB**
+:class: dropdown
 
-#### Objetivos
-- Garantir coerência temporal e distribuição de carga
+#### Objectives
+- Ensure temporal coherence and load distribution
 
-#### Tarefas
+#### Tasks
 
-- Distribuição de clock
-- Sincronização (PPS / GPSDO / White Rabbit)
-- Alinhamento de timestamps
-- Distribuição de canais entre placas
+- Clock distribution
+- Synchronization (PPS / GPSDO)
+- Timestamp alignment
+- Channel distribution across boards (probably not necessary)
 
 :::
 
-:::{warning} **6 — Controle e Infraestrutura**
+:::{warning} **6 — Control and Infrastructure**
+:class: dropdown
 
-#### Objetivos
-- Garantir operação reprodutível e controlada
+#### Objectives
+- Preparation for full pipeline development.
 
-#### Tarefas
+#### Tasks
 
-- Upload de bitstream via `progska`
+- Bitstream upload via `progska`
 - Upload via `casperfpga`
-- Containerização do ambiente
-- Migração para Python > 3.8
+- Environment containerization
+- Migration to Python > 3.8
 
 #### DevOps
 
-- Versionamento de bitstreams
-- Registro de parâmetros de build
-- Logging e monitoramento
+- Bitstream versioning
+- Build parameter logging
+- Logging and monitoring
 
 :::
 
-:::{warning} **7 — Validação**
+:::{warning} **7 — Validation**
+:class: dropdown
 
-#### Objetivos
-- Garantir consistência entre modelo e hardware
+#### Objectives
+- Ensure consistency between model and hardware
 
-#### Tarefas
+#### Tasks
 
-- Testbench automatizado
-- Modelo de referência em Python (NumPy)
-- Comparação FPGA vs modelo
-- Injeção de sinais sintéticos
-
-:::
-
-:::{warning} **8 — Hardware Bring-up**
-
-#### Objetivos
-- Validação em hardware real
-
-#### Tarefas
-
-- Loopback interno
-- Teste com tone generator
-- Snapshots via CASPER
-- Verificação espectral
-:::
-
-:::{warning} **9 — Bitstream BINGO**
-
-#### Objetivos
-- Implementação final científica
-
-#### Requisitos
-
-- Pipeline DSP validado
-- Sistema digital funcional
+- Automated testbench
+- Reference model in Python (NumPy)
+- FPGA vs model comparison
+- Synthetic signal injection
 
 :::
 
-:::{warning} **10 — Sistema Distribuído**
+:::{warning} **8 — Scientific System**
+:class: dropdown
 
-#### Objetivos
-- Integração de múltiplas SKARABs
+#### Objectives
+- Translating scientific requirements into an operational system
 
-#### Tarefas
+#### Tasks
 
-- Balanceamento de carga
-- Distribuição de dados
-- Análise de throughput
+- Scientific requirements definition
+- Translation to digital requirements
+- Ingestion pipeline
 
-:::
-
-:::{warning} **11 — Sistema Científico**
-
-#### Objetivos
-- Tradução dos requisitos científicos em sistema operacional
-
-#### Tarefas
-
-- Definição de requisitos científicos
-- Tradução para requisitos digitais
-- Pipeline de ingestão
-
-#### Formato de dados
+#### Data Format
 
 - HDF5
-  - Estrutura com:
-    - frequência
-    - tempo
-    - polarização
-    - metadados
+  - Structure with:
+    - frequency
+    - time
+    - polarization
+    - metadata
+
+#### Data Transport
+  - UDP, SPEAD, ...
+  - metadata
+:::
+
+:::{warning} **9 — Hardware Bring-up**
+:class: dropdown
+
+#### Objectives
+- Validation on real hardware
+
+#### Tasks
+
+- Internal loopback
+- Test with tone generator
+- Spectral verification
+:::
+
+:::{warning} **10 — BINGO Spectrometer**
+:class: dropdown
+
+#### Objectives
+- Final scientific implementation
+
+#### Requirements
+
+- Validated DSP pipeline
+- Functional digital system
 
 :::
 
-### Roadmap de Desenvolvimento SKARAB
+:::{warning} **11 — Scientific System**
+:class: dropdown
 
-```{mermaid}
-gantt
-title Roadmap SKARAB — Execução Paralela
-dateFormat  YYYY-MM-DD
-axisFormat  %m/%d
+#### Objectives
+- Translating scientific requirements into an operational system
 
-section Fase 0 — Ambiente
-Ambiente hven           :done,    f0a, 2026-04-01, 5d
-Ambiente uirapuru       :done,    f0b, 2026-04-01, 5d
+#### Tasks
 
-section Fase 1 — Fundamentos
-Tutorial CASPER         :active,  f1, after f0a, 10d
+- Scientific requirements definition
+- Translation to digital requirements
+- Ingestion pipeline
 
-section Fase 2 — Modelagem de Sinal
-ADC + Ruído + RFI       :         f2a, after f1, 12d
-Gain + DC removal       :         f2b, after f1, 10d
+#### Data Format
 
-section Fase 3 — DSP Core
-FFT + Leakage           :         f3a, after f2a, 10d
-Windowing               :         f3b, after f3a, 5d
-Fixed-point strategy    :         f3c, after f2b, 10d
-Decimação + FIR         :         f3d, after f3a, 10d
-Dynamic Range / SFDR    :         f3e, after f3c, 8d
+- HDF5
+  - Structure with:
+    - frequency
+    - time
+    - polarization
+    - metadata
 
-section Fase 4 — Sistema Digital
-Timestamping            :         f4a, after f3a, 8d
-Packetização            :         f4b, after f3d, 10d
-Channel Selection       :         f4c, after f3d, 8d
+#### Data Transport
+  - UDP, SPEAD, ...
+  - metadata
+:::
 
-section Fase 5 — Multi-SKARAB
-Clock + Sync            :crit,    f5a, after f4a, 12d
-Distribuição de carga   :         f5b, after f4b, 10d
+:::{warning} **12 — BINGO Pseudo Correlator**
+:class: dropdown
 
-section Fase 6 — Controle
-Container + progska     :         f6a, after f0b, 10d
-casperfpga API          :         f6b, after f6a, 10d
-Python > 3.8            :         f6c, after f6a, 12d
+- 4 signals for each Skarab, 2 colfet and 2 polarizations.
+:::
 
-section Fase 7 — Validação
-Testbench Python        :         f7a, after f3a, 12d
-Comparação FPGA         :         f7b, after f7a, 10d
 
-section Fase 8 — Hardware
-Loopback + Snapshots    :         f8a, after f4a, 10d
-Teste com sinal real    :         f8b, after f8a, 10d
+:::{warning} **13 — Use Case**
+:class: dropdown
 
-section Fase 9 — Bitstream BINGO
-Integração final        :         f9, after f5a, 15d
+- Pulsar Search
+:::
 
-section Fase 10 — Sistema Distribuído
-Multi-SKARAB pipeline   :         f10, after f9, 15d
 
-section Fase 11 — Sistema Científico
-Ingestão + formato      :         f11a, after f10, 12d
-Validação científica    :         f11b, after f11a, 10d
+:::{warning} **14 — Time Domain**
+:class: dropdown
+
+- Assess the need to develop a time domain pipeline, for higher information during comissioning.
+:::
+
+:::{warning} **15 — Use Case - Transient + Cosmology**
+:class: dropdown
+
+- Realtime transient detection in `ms` data with buffer redirecting to further time integration or dedicated analysis of data segment. 
+:::
+
+
+## Roadmap Task Graph (Tentative)
+
+```mermaid
+flowchart TD
+  F0["Fase 0 — Setup"]:::setup --> F1
+
+  F1["Fase 1 — Fundamentos CASPER"]:::base
+
+  F1 --> F2 & F3 & F6 & F8
+
+  subgraph parallel1 ["Paralelo: Modelagem + DSP"]
+    F2["Fase 2 — Modelagem de Sinal"]:::dsp
+    F3["Fase 3 — DSP Core · Pipeline FFT"]:::dsp
+    F2 --> F3
+  end
+
+  F3 --> F4
+  F4["Fase 4 — Sistema Digital"]:::digital
+
+  subgraph parallel2 ["Paralelo: Sincronização + Validação + Controle"]
+    F5["Fase 5 — Sincronização Multi-SKARAB"]:::digital
+    F7["Fase 7 — Validação"]:::digital
+    F6["Fase 6 — Controle e Infraestrutura"]:::infra
+  end
+
+  F4 --> F5 & F7
+  F6 --> F9
+
+  F8["Fase 8 — Sistema Científico"]:::science
+
+  F5 --> F9
+  F7 --> F9
+  F8 --> F10
+
+  F9["Fase 9 — Hardware Bring-up"]:::hw
+
+  F9 --> F10["Fase 10 — Espectrômetro BINGO"]:::final
+
+  subgraph usecases ["Casos de Uso (paralelos)"]
+    F12["Fase 12 — Pseudo Correlator"]:::uc
+    F13["Fase 13 — Pulsar Search"]:::uc
+    F14["Fase 14 — Time Domain"]:::uc
+    F15["Fase 15 — Transient + Cosmology"]:::uc
+  end
+
+  F10 --> F12 & F13 & F14 & F15
+
+  classDef setup  fill:#EEEDFE,stroke:#534AB7,color:#26215C
+  classDef base   fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+  classDef dsp    fill:#E6F1FB,stroke:#185FA5,color:#042C53
+  classDef digital fill:#FAEEDA,stroke:#854F0B,color:#412402
+  classDef infra  fill:#FAECE7,stroke:#993C1D,color:#4A1B0C
+  classDef science fill:#EAF3DE,stroke:#3B6D11,color:#173404
+  classDef hw     fill:#FBEAF0,stroke:#993556,color:#4B1528
+  classDef final  fill:#534AB7,stroke:#26215C,color:#EEEDFE
+  classDef uc     fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A
 ```
