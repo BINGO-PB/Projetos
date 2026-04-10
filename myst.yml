@@ -60,7 +60,9 @@ project:
           children:
             - title: Undergraduate Research
               children:
-                - pattern: "content/01_projetos/01_undergraduate/*.md"
+              - title: Digital Signal Processing
+                children:
+                  - pattern: "content/01_undergraduate/01_signals/*.md"
             - title: Graduate Research
               children:
                 - pattern: "content/01_projetos/02_graduate/*.md"
@@ -78,15 +80,15 @@ project:
             - title: Uirapuru2025 - First Light
               children:
                 - pattern: "content/02_projetos_ongoing/01_UIRAPURU2025/*.md"
-            - title: Meeting Minutes
+            - title: Mnicorneta
               children:
-                - pattern: "content/02_projetos_ongoing/01_UIRAPURU2025/MEETINGS_MINUTES/*.md"
-            - title: Dev Notes
+                - pattern: "content/02_projetos_ongoing/02_MINIHORN2025/*.md"
+            - title: SKARAB
               children:
-                - pattern: "content/02_projetos_ongoing/01_UIRAPURU2025/DEV_NOTES/*.md"
-            - title: Digital Signal Processing
+                - pattern: "content/02_projetos_ongoing/03_SKARAB/*.md"
+            - title: White Paper
               children:
-                - pattern: "content/02_projetos_ongoing/03_signals/*.md"
+              - pattern: "content/02_projetos_ongoing/04_WHITE_PAPER/*.md"
 
 
 
