@@ -1,5 +1,10 @@
 # BINGO Skarab PB
 
+:::{admonition} # Project
+:class: alert
+[GitHub Project Link](https://github.com/orgs/BINGO-PB/projects/5)
+:::
+
 ## Problem Description
 
 The SKARAB (Square Kilometer Array Reconfigurable Application Board) is a superscale FPGA-based computing platform, designed by Peralex Electronics in South Africa, in collaboration with SARAO for radio astronomy. It is the successor to ROACH2, focused on high performance, low latency, and digital signal processing.
@@ -13,7 +18,8 @@ This device will be used as the BINGO backend. It is necessary to:
 
 ## History
 
-## Team
+:::{admonition} **Team**
+:class: alert dropdown
 
 - UFCG
     - Luciano Barosi
@@ -27,8 +33,7 @@ This device will be used as the BINGO backend. It is necessary to:
 - INPE
     - Cesar Strauss
     - Jorge
-
-## Baseline
+::: 
 
 ### Hardware
 
@@ -42,11 +47,127 @@ SKARAB BOARD
   - 3 GSps
 - QSFP+ 40 GbE
 
-### Science Requirements
+:::{admonition} **Science Requirements**
+:class: important dropdown
 
-- Bandwidth $\sim$ 400 MHz
-  - Decimation: 8
-- channels: 8192
+#### Instrument
+
+- FWHM
+$$\theta = 40 \;\mathrm{arcmin}$$
+- Bandwith
+$$ 980 \;\mathrm{Mhz} \ge \nu \ge 1260 \;\mathrm{Mhz}$$
+- Central Frequency: 
+$$1100 \;\mathrm{Mhz}$$
+* λ ≈ 0.27 m
+- Effective Area
+$$
+\theta \approx 1.2 \frac{\lambda}{D} \Rightarrow D \approx 40 \;\text{m} \\
+\eta = 0.7 \\
+A_{\text{eff}} \approx \eta \frac{\pi D^2}{4} \approx 0.7 \times 1256 \approx 880 \, \text{m}^2
+$$
+- System Temperature
+$$
+T_{Sys} = 40 \,\text{K}
+$$
+- Integration Time
+$$
+\tau = 1s
+$$
+---
+
+#### Sky Temperature
+
+Considering synchroton radiation:
+
+$$
+T \propto \nu^{-2.6}
+$$
+
+| Region                  | (T_A)        |
+| ----------------------- | ------------ |
+| high galacyiv latitude | **~3 K**     |
+| low galactc latitude        | **~15–25 K** |
+
+---
+
+
+#### SEFD 
+
+$$
+SEFD = \frac{2k T_{\text{sys}}}{A_{\text{eff}}}
+$$
+
+| Region                  | SEFD        |
+| ----------------------- | ------------ |
+| high galacyiv latitude | **130**     |
+| low galactc latitude        | **180 K** |
+
+---
+
+#### Sensitivity
+
+$$
+\Delta S = \frac{SEFD}{\sqrt{B \tau}}
+$$
+
+| Region                  | $\Delta S$        |
+| ----------------------- | ------------ |
+| high galacyiv latitude | $\approx 8\;mJy$     |
+| low galactc latitude        | $\approx 11\;mJy$ |
+
+
+#### Galactic Foreground 
+
+$$
+S = \frac{2kT_A}{A_{\text{eff}}}
+$$
+
+| Region                  | $ S$        |
+| ----------------------- | ------------ |
+| high galactic latitude | $\approx 10\;Jy$     |
+| low galactic latitude        | $\approx 65\;Jy$ |
+---
+
+#### Spectral Resolution
+
+| Canais | Δν      |
+| ------ | ------- |
+| 4096   | ~68 kHz |
+| 8192   | ~34 kHz |
+
+---
+
+#### Channel Sensitivity
+
+$$
+\Delta S = \frac{SEFD}{\sqrt{\Delta\nu \tau}}
+$$
+
+
+
+- Minimum detectable signal (5σ)
+
+| Configuração | Detectável    |
+| ------------ | ------------- |
+| 4096 canais  | ~2.5 – 3.5 Jy |
+| 8192 canais  | ~3.5 – 5 Jy   |
+
+---
+
+#### Quantization
+
+$$
+DR \approx 6.02N  + 1.76
+$$
+
+| Bits | Dynamic Range (dB) | Níveis | DR linear  |
+| ---- | ------------------ | ------ | ---------- |
+| 12   | ~74 dB             | 4096   | ~1.6 × 10⁴ |
+| 14   | ~86 dB             | 16384  | ~6.5 × 10⁴ |
+| 16   | ~98 dB             | 65536  | ~2.6 × 10⁵ |
+
+
+:::
 
 
 ### Available code
