@@ -1,6 +1,6 @@
 # BINGO Skarab PB
 
-:::{admonition} # Project
+:::{admonition} **Project**
 :class: alert
 [GitHub Project Link](https://github.com/orgs/BINGO-PB/projects/5)
 :::
@@ -26,7 +26,7 @@ This device will be used as the BINGO backend. It is necessary to:
     - Jordany Vieira
     - Tales
     - Gutemberg
-    - DEE Student
+    - Valmir
     - João Vitor
 - CHINA
     - Hector
@@ -35,8 +35,8 @@ This device will be used as the BINGO backend. It is necessary to:
     - Jorge
 ::: 
 
-### Hardware
-
+:::{admonition} **Hardware**
+:class: alert dropdown
 SKARAB BOARD
 - FPGA Virtex-7 XC7VX690T
   - 690,000 logic cells
@@ -46,6 +46,8 @@ SKARAB BOARD
   - 14 bits
   - 3 GSps
 - QSFP+ 40 GbE
+:::
+
 
 :::{admonition} **Science Requirements**
 :class: important dropdown
@@ -61,9 +63,9 @@ $$1100 \;\mathrm{Mhz}$$
 * λ ≈ 0.27 m
 - Effective Area
 $$
-\theta \approx 1.2 \frac{\lambda}{D} \Rightarrow D \approx 40 \;\text{m} \\
 \eta = 0.7 \\
-A_{\text{eff}} \approx \eta \frac{\pi D^2}{4} \approx 0.7 \times 1256 \approx 880 \, \text{m}^2
+\Omega = \frac{4}{\pi \log 2} \theta^2 \\
+A_{\text{eff}} = \eta \frac{c}{\bar\nu}^2 \frac{1}{\Omega} \approx 321 \, \text{m}^2
 $$
 - System Temperature
 $$
@@ -85,8 +87,8 @@ $$
 
 | Region                  | (T_A)        |
 | ----------------------- | ------------ |
-| high galacyiv latitude | **~3 K**     |
-| low galactc latitude        | **~15–25 K** |
+| high galactic latitude | **~3 K**     |
+| low galactic latitude        | **~15–25 K** |
 
 ---
 
@@ -94,15 +96,8 @@ $$
 #### SEFD 
 
 $$
-SEFD = \frac{2k T_{\text{sys}}}{A_{\text{eff}}}
+SEFD = \frac{2k T_{\text{sys}}}{A_{\text{eff}}} \approx 350 \mathrm{K}
 $$
-
-| Region                  | SEFD        |
-| ----------------------- | ------------ |
-| high galacyiv latitude | **130**     |
-| low galactc latitude        | **180 K** |
-
----
 
 #### Sensitivity
 
@@ -110,11 +105,18 @@ $$
 \Delta S = \frac{SEFD}{\sqrt{B \tau}}
 $$
 
-| Region                  | $\Delta S$        |
-| ----------------------- | ------------ |
-| high galacyiv latitude | $\approx 8\;mJy$     |
-| low galactc latitude        | $\approx 11\;mJy$ |
+#### Channel Sensitivity
 
+$$
+\Delta S = \frac{SEFD}{\sqrt{\Delta\nu \tau}}
+$$
+
+#### Data Rate
+
+
+$$
+\text{DataRate} = \frac{2 \times N_{\mathrm{pol}} \times  n_{\mathrm{bits}} \times n_{\mathrm{channels}}}{8 \times t_{\mathrm{int}} }
+$$
 
 #### Galactic Foreground 
 
@@ -128,46 +130,15 @@ $$
 | low galactic latitude        | $\approx 65\;Jy$ |
 ---
 
-#### Spectral Resolution
-
-| Canais | Δν      |
-| ------ | ------- |
-| 4096   | ~68 kHz |
-| 8192   | ~34 kHz |
-
----
-
-#### Channel Sensitivity
-
-$$
-\Delta S = \frac{SEFD}{\sqrt{\Delta\nu \tau}}
-$$
+| n_channels | <sub>t_int=1s</sub><br>Sensitivity | <sub>t_int=1s</sub><br>Channel Sensitivity | <sub>t_int=1s · n_bits=12</sub><br>Data Rate Horn | <sub>t_int=1s · n_bits=14</sub><br>Total Data Rate | <sub>t_int=1ms</sub><br>Sensitivity | <sub>t_int=1ms</sub><br>Channel Sensitivity | <sub>t_int=1ms · n_bits=12</sub><br>Data Rate Horn | <sub>t_int=1ms · n_bits=14</sub><br>Data Rate Horn | <sub>n_taps=4</sub><br>DSP Slices | <sub>n_taps=8</sub><br>DSP Slices |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 512 | 0.465 Jy | 0.465 Jy | 0.000003 Gbyte / s | 0.0001 Gbyte / s | 14.71 Jy | 14.71 Jy | 0.003072 Gbyte / s | 0.003584 Gbyte / s | 6,032 | 6,074 |
+| 1024 | 0.658 Jy | 0.658 Jy | 0.000006 Gbyte / s | 0.000201 Gbyte / s | 20.80 Jy | 20.80 Jy | 0.006144 Gbyte / s | 0.007168 Gbyte / s | 13,354 | 13,395 |
+| 2048 | 0.930 Jy | 0.930 Jy | 0.000012 Gbyte / s | 0.000401 Gbyte / s | 29.41 Jy | 29.41 Jy | 0.012 Gbyte / s | 0.014 Gbyte / s | 29,328 | 29,370 |
+| 4096 | 1.32 Jy | 1.32 Jy | 0.000025 Gbyte / s | 0.000803 Gbyte / s | 41.59 Jy | 41.59 Jy | 0.025 Gbyte / s | 0.029 Gbyte / s | 63,939 | 63,981 |
 
 
 
-- Minimum detectable signal (5σ)
-
-| Configuração | Detectável    |
-| ------------ | ------------- |
-| 4096 canais  | ~2.5 – 3.5 Jy |
-| 8192 canais  | ~3.5 – 5 Jy   |
-
----
-
-#### Quantization
-
-$$
-DR \approx 6.02N  + 1.76
-$$
-
-| Bits | Dynamic Range (dB) | Níveis | DR linear  |
-| ---- | ------------------ | ------ | ---------- |
-| 12   | ~74 dB             | 4096   | ~1.6 × 10⁴ |
-| 14   | ~86 dB             | 16384  | ~6.5 × 10⁴ |
-| 16   | ~98 dB             | 65536  | ~2.6 × 10⁵ |
-
-
-:::
 
 
 ### Available code
@@ -176,14 +147,8 @@ $$
   - This repository contains firmware and control scripts for the SKARAB platform used in the BINGO (Baryon Oscillation Spectroscopic Survey) radio telescope project. The firmware is designed to work with the SKARAB (Square Kilometre Array Reconfigurable Application Board) platform equipped with Virtex-7 FPGA and ADC mezzanine cards.
 - GITHUB repository: https://github.com/BINGO-PB/bingo_skarab
   - This repository allows creating containers for developing a SKARAB control system with different library versions.
+- GITHUB repository: https://github.com/BINGO-PB/skarab-dev, has bingo-skarab as submodule and concentrates all the efforts for development and documentation.
 
-### Current best configuration
-
-- spectrometer:
-  - BW: 187.5 Mhz
-  - channels: 32768
-  - UDP
-  - 40GB
 
 ## Challenges Encountered
 
@@ -192,11 +157,14 @@ $$
 ## Work Organization Decisions
 
 :::{admonition} **Computers**
-- **hven**: machine where *Matlab* and *Vivado* will be installed for bitstream development.
-- **uirapuru**: dual boot Ubuntu 16.04 + Python 2.7, connected to SKARAB for control system development.
+- : 🎉 **bingo01**: machine where *Matlab* and *Vivado* will be installed for bitstream development.
+- 🎉 **bingo02**: Ubuntu 20.04 + Python 2.7, connected to SKARAB for control system development.
 :::
 
 :::{admonition} **Workflow**
+
+⚠️ To be updated
+
 - Stage 0/1 meetings - Tuesday 09:00 - ZOOM
 - bi-weekly online alignment meetings
 - 1-1 interactions for development and task completions
@@ -206,26 +174,14 @@ $$
 
 ### RoadMap 
 
-:::{seealso} **Phase 0 — Computer Set Up**
+:::{seealso}  ✔️ **Phase 0 — Computer Set Up**
 :class: dropdown
 
-#### Objectives
-- Development environment setup
-- Execution of basic CASPER examples
-
-#### Tasks
-
-- Environment setup on *hven*
-  - Team: Tales + Arthur
-  - Milestone: running `casper_fft.slx`
-
-- Environment setup on *uirapuru*
-  - Team: Tales + João Vitor
-  - Milestone: CASPER tutorial 2
+⚠️ Report still pending
 
 :::
 
-:::{seealso} **Phase 1 — CASPER Fundamentals**
+:::{seealso} *⚙️ *Phase 1 — CASPER Fundamentals**
 :class: dropdown
 
 #### Objectives
@@ -242,22 +198,6 @@ $$
 - FPGA Architecture (DSP slices, BRAM, routing)
 - Fixed-point representation
 - Processing pipeline
-:::
-
-:::{warning} **2 — Signal Modeling**
-:class: dropdown
-
-#### Objectives
-- Build realistic models before hardware
-
-#### Tasks
-
-- ADC modeling
-- Noise modeling
-- RFI modeling
-- Gain control (gain staging)
-- DC removal
-
 :::
 
 :::{warning} **3 — DSP Core (FFT Pipeline)**
@@ -289,37 +229,7 @@ $$
 
 :::
 
-:::{warning} **4 — Digital System**
-:class: dropdown
-
-#### Objectives
-- Transform the DSP into a functional embedded system
-
-#### Tasks
-
-- Timestamping
-- Packetization (40 GbE)
-- Channel selection
-- Buffering
-
-:::
-
-:::{warning} **5 — Synchronization and Multi-SKARAB**
-:class: dropdown
-
-#### Objectives
-- Ensure temporal coherence and load distribution
-
-#### Tasks
-
-- Clock distribution
-- Synchronization (PPS / GPSDO)
-- Timestamp alignment
-- Channel distribution across boards (probably not necessary)
-
-:::
-
-:::{warning} **6 — Control and Infrastructure**
+:::{warning} 👷🏼  **6 — Control and Infrastructure**
 :class: dropdown
 
 #### Objectives
@@ -381,18 +291,6 @@ $$
   - metadata
 :::
 
-:::{warning} **9 — Hardware Bring-up**
-:class: dropdown
-
-#### Objectives
-- Validation on real hardware
-
-#### Tasks
-
-- Internal loopback
-- Test with tone generator
-- Spectral verification
-:::
 
 :::{warning} **10 — BINGO Spectrometer**
 :class: dropdown
@@ -459,61 +357,3 @@ $$
 - Realtime transient detection in `ms` data with buffer redirecting to further time integration or dedicated analysis of data segment. 
 :::
 
-
-## Roadmap Task Graph (Tentative)
-
-```mermaid
-flowchart TD
-  F0["Fase 0 — Setup"]:::setup --> F1
-
-  F1["Fase 1 — Fundamentos CASPER"]:::base
-
-  F1 --> F2 & F3 & F6 & F8
-
-  subgraph parallel1 ["Paralelo: Modelagem + DSP"]
-    F2["Fase 2 — Modelagem de Sinal"]:::dsp
-    F3["Fase 3 — DSP Core · Pipeline FFT"]:::dsp
-    F2 --> F3
-  end
-
-  F3 --> F4
-  F4["Fase 4 — Sistema Digital"]:::digital
-
-  subgraph parallel2 ["Paralelo: Sincronização + Validação + Controle"]
-    F5["Fase 5 — Sincronização Multi-SKARAB"]:::digital
-    F7["Fase 7 — Validação"]:::digital
-    F6["Fase 6 — Controle e Infraestrutura"]:::infra
-  end
-
-  F4 --> F5 & F7
-  F6 --> F9
-
-  F8["Fase 8 — Sistema Científico"]:::science
-
-  F5 --> F9
-  F7 --> F9
-  F8 --> F10
-
-  F9["Fase 9 — Hardware Bring-up"]:::hw
-
-  F9 --> F10["Fase 10 — Espectrômetro BINGO"]:::final
-
-  subgraph usecases ["Casos de Uso (paralelos)"]
-    F12["Fase 12 — Pseudo Correlator"]:::uc
-    F13["Fase 13 — Pulsar Search"]:::uc
-    F14["Fase 14 — Time Domain"]:::uc
-    F15["Fase 15 — Transient + Cosmology"]:::uc
-  end
-
-  F10 --> F12 & F13 & F14 & F15
-
-  classDef setup  fill:#EEEDFE,stroke:#534AB7,color:#26215C
-  classDef base   fill:#E1F5EE,stroke:#0F6E56,color:#04342C
-  classDef dsp    fill:#E6F1FB,stroke:#185FA5,color:#042C53
-  classDef digital fill:#FAEEDA,stroke:#854F0B,color:#412402
-  classDef infra  fill:#FAECE7,stroke:#993C1D,color:#4A1B0C
-  classDef science fill:#EAF3DE,stroke:#3B6D11,color:#173404
-  classDef hw     fill:#FBEAF0,stroke:#993556,color:#4B1528
-  classDef final  fill:#534AB7,stroke:#26215C,color:#EEEDFE
-  classDef uc     fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A
-```

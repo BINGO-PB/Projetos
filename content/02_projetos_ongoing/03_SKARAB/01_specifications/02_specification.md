@@ -4,59 +4,7 @@
 ## System Overview Diagram
 
 ```mermaid
-flowchart TB
-
-    SKY["Sky"] --> POL["OMT / Polarizer"]
-
-    POL --> R1[Radiometer 1]
-    POL --> R2[Radiometer 2]
-    POL --> R3[Radiometer 3]
-    POL --> R4[Radiometer 4]
-
-    subgraph ADC_BLOCK[ADC]
-        A["ADC 3 GSps 12-16 bits 36-48 Gb/s per channel"]
-    end
-
-    R1 --> A
-    R2 --> A
-    R3 --> A
-    R4 --> A
-
-    subgraph FPGA_BLOCK[FPGA]
-        IN[JESD204B]
-
-        FIR["FIR + Decimation x4 (192 to 48 Gb/s)"]
-
-        PFB["PFB + FFT (4096 ch)"]
-
-        RFI["RFI Filtering (spectral)"]
-
-        INT[Integration]
-
-        OUT[Packetization]
-    end
-
-    A --> IN
-    IN --> FIR
-    FIR --> PFB
-    PFB --> RFI
-    RFI --> INT
-    INT --> OUT
-
-    OUT --> NET["40 GbE (0.03-2.6 Gb/s per horn)"]
-
-    NET --> GPU[GPU Processing]
-    GPU --> STORE[HDF5 Storage]
-
-    D1{"ADC bits - Dynamic Range"}
-    D2{"Channels vs Resolution"}
-    D3{"Integration time"}
-    D4{"RFI FPGA vs GPU"}
-
-    A --> D1
-    PFB --> D2
-    INT --> D3
-    RFI --> D4
+per hornper horn
 ```
 
 ---
