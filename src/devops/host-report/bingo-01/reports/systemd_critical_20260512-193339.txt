@@ -1,0 +1,20 @@
+The time when unit became active or started is printed after the "@" character.
+The time the unit took to start is printed after the "+" character.
+
+graphical.target @1min 2.793s
+└─multi-user.target @1min 2.793s
+  └─docker.service @6.940s +3.834s
+    └─containerd.service @5.537s +1.386s
+      └─network.target @5.515s
+        └─NetworkManager.service @4.297s +1.216s
+          └─dbus.service @4.190s +103ms
+            └─basic.target @4.186s
+              └─sockets.target @4.186s
+                └─docker.socket @4.166s +19ms
+                  └─sysinit.target @4.159s
+                    └─systemd-resolved.service @3.663s +495ms
+                      └─systemd-tmpfiles-setup.service @3.552s +89ms
+                        └─local-fs.target @3.520s
+                          └─home.mount @3.421s +98ms
+                            └─systemd-fsck@dev-disk-by\x2duuid-f930646c\x2dbc94\x2d4268\x2db6ca\x2d4fc712ef4297.service @2.832s +565ms
+                              └─dev-disk-by\x2duuid-f930646c\x2dbc94\x2d4268\x2db6ca\x2d4fc712ef4297.device @2.796s

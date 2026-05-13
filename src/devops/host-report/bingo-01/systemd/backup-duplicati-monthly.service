@@ -1,0 +1,19 @@
+[Unit]
+Description=Backup mensal histórico com Duplicati (bingo-01)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+WorkingDirectory=/home/lbarosi/code/devops/bingo-01
+ExecStart=/home/lbarosi/code/devops/bingo-01/scripts/backup-duplicati-monthly.sh --apply
+TimeoutStartSec=0
+Nice=19
+IOSchedulingClass=idle
+ProtectSystem=full
+ProtectHome=no
+NoNewPrivileges=true
+PrivateTmp=true
+

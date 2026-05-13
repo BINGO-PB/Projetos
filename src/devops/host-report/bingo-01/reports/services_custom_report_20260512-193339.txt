@@ -1,0 +1,13 @@
+# Serviços customizados/relevantes para documentação
+# Host: bingo-01
+# Data: 2026-05-12T19:33:40-03:00
+
+## Serviços enabled cujo unit file está em /etc/systemd/system
+anydesk.service | /etc/systemd/system/anydesk.service
+callisto.service | /etc/systemd/system/callisto.service
+jupyterhub.service | /etc/systemd/system/jupyterhub.service
+nfs-uirapuru.service | /etc/systemd/system/nfs-uirapuru.service
+
+## Observações
+- Estes serviços tendem a conter customizações locais e devem ser priorizados na documentação.
+- Revise também serviços de terceiros em execução (docker, webmin/usermin, openvpn, jupyterhub etc.).

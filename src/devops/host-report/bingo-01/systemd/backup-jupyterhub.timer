@@ -1,0 +1,12 @@
+[Unit]
+Description=Timer semanal do backup incremental de /jupyterhub/home
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+RandomizedDelaySec=1h
+Unit=backup-jupyterhub.service
+
+[Install]
+WantedBy=timers.target
+

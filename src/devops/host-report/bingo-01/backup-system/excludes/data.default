@@ -1,0 +1,7 @@
+.*
+.cache/
+.local/share/Trash/
+node_modules/
+__pycache__/
+.venv/
+lost+found/

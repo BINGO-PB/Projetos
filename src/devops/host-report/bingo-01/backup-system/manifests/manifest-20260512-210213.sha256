@@ -1,0 +1,14 @@
+8dce4dbd541633fc99ff02ecf2bdb57b59ec7cdaa961899be2c80fb7cf31dc25  /home/lbarosi/code/devops/bingo-01/backup-system/scripts/backup-common.sh
+c57c4f8fe2ffd44934f4de8c04d575f570e2d2338bd2cad15b0fc126b5981bc5  /home/lbarosi/code/devops/bingo-01/backup-system/excludes/data.default
+f5e4efd99ee48d73d83dae996eb23610977481383cbd39175e287a105acaebe7  /home/lbarosi/code/devops/bingo-01/backup-system/excludes/home.default
+e5863237f43c8dc6fb82eef09f0083cfce5c479f5563dd4bffc992cd9eccb326  /home/lbarosi/code/devops/bingo-01/backup-system/excludes/jupyterhub.default
+7d99d58077877706cca7090bfeed7c9096cc1b06654e71b6229da360bb3f5a42  /home/lbarosi/code/devops/bingo-01/backup-system/excludes/share-code.default
+e096bfb7f559c7c8c26032951ed5668f9ff35f8be5d4051fca8b456be9022670  /home/lbarosi/code/devops/bingo-01/scripts/backup-all-dry-run.sh
+77b7f6a5d1b1127a5f3dd4f805d324da9ed5ddc556d76c24617141850af2d03a  /home/lbarosi/code/devops/bingo-01/scripts/backup-all.sh
+47e19610a7e25033457e457716c3be849e5d18ccb747cf6a4558871aa3a7e00f  /home/lbarosi/code/devops/bingo-01/scripts/backup-data.sh
+5db24e61af90a7184d77009c4423c3248f2fc8477bd6b21a21c448fb0fd04d18  /home/lbarosi/code/devops/bingo-01/scripts/backup-home.sh
+d111608620811511e819ab73d3bf369a1e00eb61702ebed9049a09b9ff7ed81e  /home/lbarosi/code/devops/bingo-01/scripts/backup-jupyterhub.sh
+4d7e92613792cc92ecbb5b3395b74111e0ef15bc19ca943d401f1b6fab0727f9  /home/lbarosi/code/devops/bingo-01/scripts/backup-report.sh
+0aa4c74711c3e3b026d1b98412ebf395d9457325d310b5553afdc9faa3355b84  /home/lbarosi/code/devops/bingo-01/scripts/backup-share-code.sh
+97c168d5fbf2cd84cafad865491c5355b4110106c389ff2096691d4ed0d49ea7  /home/lbarosi/code/devops/bingo-01/scripts/generate-manifests.sh
+deca4c26c6d8f0267e641521a55ee4138c90323270bf808dea3d541177793c71  /home/lbarosi/code/devops/bingo-01/scripts/install-systemd-backup-units.sh

@@ -1,0 +1,12 @@
+[Unit]
+Description=Timer mensal do backup histórico com Duplicati
+
+[Timer]
+OnCalendar=monthly
+Persistent=true
+RandomizedDelaySec=2h
+Unit=backup-duplicati-monthly.service
+
+[Install]
+WantedBy=timers.target
+

@@ -1,0 +1,12 @@
+[Unit]
+Description=Timer semanal do backup incremental de /home
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+RandomizedDelaySec=1h
+Unit=backup-home.service
+
+[Install]
+WantedBy=timers.target
+

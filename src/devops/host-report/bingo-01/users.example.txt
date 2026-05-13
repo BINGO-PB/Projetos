@@ -1,0 +1,6 @@
+# Um usuário por linha
+# Linhas iniciadas com # são ignoradas
+
+alice
+bob
+carol

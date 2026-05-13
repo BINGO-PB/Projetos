@@ -1,0 +1,18 @@
+[Unit]
+Description=Backup incremental local de /data para bingo-01
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+WorkingDirectory=/home/lbarosi/code/devops/bingo-01
+ExecStart=/home/lbarosi/code/devops/bingo-01/scripts/backup-data.sh --apply
+Nice=19
+IOSchedulingClass=idle
+ProtectSystem=full
+ProtectHome=no
+NoNewPrivileges=true
+PrivateTmp=true
+

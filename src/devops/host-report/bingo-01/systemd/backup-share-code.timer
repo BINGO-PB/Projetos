@@ -1,0 +1,12 @@
+[Unit]
+Description=Timer semanal do backup incremental de /share/code
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+RandomizedDelaySec=1h
+Unit=backup-share-code.service
+
+[Install]
+WantedBy=timers.target
+

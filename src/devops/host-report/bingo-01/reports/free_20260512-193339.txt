@@ -1,0 +1,3 @@
+               total       usada       livre    compart.  buff/cache  disponível
+Mem.:           62Gi       4,0Gi        56Gi       1,8Mi       3,2Gi        58Gi
+Swap:          8,0Gi          0B       8,0Gi
