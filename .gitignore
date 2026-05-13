@@ -250,3 +250,12 @@ _build
 
 # MyST build outputs
 _build
+
+src/devops/host-report/bingo-01/.backup-target/
+src/devops/host-report/bingo-01/.backup-target/**
+src/devops/host-report/bingo-01/crash-recovery/output/
+src/devops/host-report/bingo-01/crash-recovery/output/**
+src/devops/host-report/bingo-01/crash-recovery/archive/
+src/devops/host-report/bingo-01/crash-recovery/archive/**
+src/devops/host-report/bingo-01/backup-system/logs/
+src/devops/host-report/bingo-01/backup-system/logs/**
