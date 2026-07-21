@@ -94,6 +94,9 @@ project:
               - title: Literature Review
                 children:
                 - pattern: "content/02_projetos_ongoing/03_SKARAB/01_specifications/01_literature/*.md"
+              - title: BINGO-01 DEVOPS
+                children:
+                  - pattern: "content/02_projetos_ongoing/06_DEVOPS/*.md"
             - title: White Paper
               children:
               - pattern: "content/02_projetos_ongoing/04_WHITE_PAPER/*.md"
