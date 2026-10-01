@@ -1,10 +1,12 @@
 from __future__ import annotations
+
 from datetime import datetime
-from sqlmodel import SQLModel, Field, Column, Integer, String, Float, DateTime
+
+from sqlmodel import Column, DateTime, Float, Integer, SQLModel, String
 
 
 class RawDataRecord(SQLModel):
-    __tablename__ = 'raw_data_records'
+    __tablename__ = "raw_data_records"
 
     id = Column(Integer, primary_key=True)
     path = Column(String, nullable=False)
@@ -19,153 +21,119 @@ class RawDataRecord(SQLModel):
     created_at = Column(DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return f"<RawDataRecord(id={self.id}, path='{self.path}', format='{self.format}')>"
+        return (
+            f"<RawDataRecord(id={self.id}, path='{self.path}', format='{self.format}')>"
+        )
 
 
-class RawData
-
+class RawData:
     def __init__(self, path, engine=None):
         self.path = path
         self.data = self.find_data(path, format)
         self.engine = engine
 
-    def find_data(path, format): 
+    def find_data(path, format):
         """Função para localizar os arquivos em um caminho."""
 
     def get_info():
         """obtem informações básicas sobre os arquivos."""
-        pass
 
     def parse_metadata():
         """Obtém metadados dos arquivos."""
-        pass
 
     def register():
         """Registra os dados brutos em um formato padronizado no banco de dados"""
-        pass
 
     def to_hdf():
-        """Converte os dados brutos para o formato HDF5.
-        """
-        pass
+        """Converte os dados brutos para o formato HDF5."""
 
     def to_zarr():
-        """Converte os dados brutos para o formato Zarr.
-        """
-        pass
-    
-    
+        """Converte os dados brutos para o formato Zarr."""
+
+
 class RawDataProcessor:
     def __init__(self, raw_data_record: RawDataRecord):
         self.raw_data_record = raw_data_record
 
     def preprocess():
         """Realiza o pré-processamento dos dados brutos."""
-        pass
 
     def resample():
         """Realiza o reamostragem dos dados brutos."""
-        pass
-    
+
     def normalize():
         """Normaliza os dados brutos."""
-        pass
-    
+
     def get_baseline():
         """Calcula a linha de base dos dados brutos."""
-        pass
-    
+
     def get_baseline_mean():
         """Calcula a média da linha de base dos dados brutos."""
-        pass
-    
+
     def get_baseline_median():
         """Calcula a mediana da linha de base dos dados brutos."""
-        pass
-    
+
     def get_baseline_svd():
         """Calcula a linha de base dos dados brutos usando SVD."""
-        pass
-    
+
     def get_baseline_wavelet():
         """Calcula a linha de base dos dados brutos usando Wavelet."""
-        pass
-    
+
     def median_filter():
         """Aplica um filtro mediano aos dados brutos."""
-        pass
-    
+
     def MAD_filter():
         """Aplica um filtro MAD aos dados brutos."""
-        pass
-    
+
     def sum_threshold():
         """Aplica um limiar de soma aos dados brutos."""
-        pass
-    
+
     def find_peaks():
         """Encontra picos nos dados brutos."""
-        pass
-    
+
     def find_blobs():
         """Encontra blobs nos dados brutos."""
-        pass
-    
+
     def find_trends():
         """Encontra tendências nos dados brutos."""
-        pass
-    
+
     def detrend():
         """Remove tendências dos dados brutos."""
-        pass
-    
+
     def mask():
         """Aplica uma máscara aos dados brutos."""
-        pass
-    
-    
+
+
 class RAWDataVisualizer:
     def __init__(self, raw_data_record: RawDataRecord):
         self.raw_data_record = raw_data_record
 
     def plot_time_series():
         """Plota a série temporal dos dados brutos."""
-        pass
 
     def plot_spectrogram():
         """Plota o espectrograma dos dados brutos."""
-        pass
 
     def plot_histogram():
         """Plota o histograma dos dados brutos."""
-        pass
 
     def plot_lightcurve():
         """Plota o mapa de calor dos dados brutos."""
-        pass
-    
+
     def manipulate():
         """Permite manipular visualmente os dados brutos."""
-        pass
-    
+
     def make_plot_attrs():
         """Cria atributos de plotagem para os dados brutos."""
-        pass
-    
+
     def make_animation():
         """Cria uma animação dos dados brutos."""
-        pass
-    
+
     def print_to_pdf():
         """Imprime os dados brutos em formato PDF."""
-        pass
-    
+
     def print_to_png():
         """Imprime os dados brutos em formato PNG."""
-        pass
-    
+
     def publish():
         """Publica os dados brutos em uma plataforma online."""
-        pass    
-    
-    

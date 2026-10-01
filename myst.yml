@@ -62,7 +62,7 @@ project:
               children:
               - title: Digital Signal Processing
                 children:
-                  - pattern: "content/01_undergraduate/01_signals/*.md"
+                  - pattern: "content/01_projetos/01_undergraduate/01_signals/*.md"
             - title: Graduate Research
               children:
                 - pattern: "content/01_projetos/02_graduate/*.md"
@@ -94,12 +94,15 @@ project:
               - title: Literature Review
                 children:
                 - pattern: "content/02_projetos_ongoing/03_SKARAB/01_specifications/01_literature/*.md"
-              - title: BINGO-01 DEVOPS
-                children:
-                  - pattern: "content/02_projetos_ongoing/06_DEVOPS/*.md"
-            - title: White Paper
+            - title: BINGO-01 DEVOPS
               children:
-              - pattern: "content/02_projetos_ongoing/04_WHITE_PAPER/*.md"
+                  - pattern: "content/02_projetos_ongoing/06_DEVOPS/*.md"
+            - title: ESTRUTURAL
+              children:
+                  - pattern: "content/02_projetos_ongoing/07_STRUCTURES/*.md"
+            # - title: White Paper
+            #   children:
+            #   - pattern: "content/02_projetos_ongoing/04_WHITE_PAPER/*.md"
 
 
 
