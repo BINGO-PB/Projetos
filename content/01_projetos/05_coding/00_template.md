@@ -1,6 +1,5 @@
 ---
 title: Code Projects
-author: ""
 ---
 
 ::::{admonition} **Code Project Title**

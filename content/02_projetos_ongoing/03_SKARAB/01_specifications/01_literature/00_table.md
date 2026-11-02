@@ -7,7 +7,6 @@ site:
 
 
 :::{table} Consolidated Radio Telescope Pipeline Survey
-:widths: auto
 :name: tab:pipelines
 
 | # | Categoria | Autores | Ano | Título | Stage | Latency | Scalability | Hardware | Features | Citações |

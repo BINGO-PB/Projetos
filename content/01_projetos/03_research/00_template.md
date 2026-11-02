@@ -1,6 +1,5 @@
 ---
 title: Research Projects
-author: ""
 ---
 
 ::::{admonition} *Research Project*

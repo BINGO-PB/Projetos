@@ -1,6 +1,5 @@
 ---
 title: Outreach Projects
-author: ""
 ---
 
 ::::{admonition} **Outreach Project Title**

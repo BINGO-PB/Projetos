@@ -1,6 +1,5 @@
 ---
 title: Graduate Projects
-author: ""
 ---
 
 ::::{admonition} **Graduate Project Title**
